@@ -20,7 +20,9 @@ Built as a **portfolio project** to demonstrate modern React patterns, API integ
 
 ### Movie details
 
-![Inception movie detail page](screenshots/movie-details.png)
+![Peaky Blinders — movie detail page](screenshots/movie-details-peaky-blinders.png)
+
+![Spider-Man: Brand New Day — movie detail page](screenshots/movie-details-spiderman.png)
 
 ### Watchlist
 
