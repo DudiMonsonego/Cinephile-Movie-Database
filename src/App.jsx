@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import MovieDetails from './pages/MovieDetails';
 import Watchlist from './pages/Watchlist';
+import YearBrowse from './pages/YearBrowse';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/movie/:id" element={<MovieDetails />} />
             <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/year/:year" element={<YearBrowse />} />
           </Routes>
         </BrowserRouter>
       </WatchlistProvider>

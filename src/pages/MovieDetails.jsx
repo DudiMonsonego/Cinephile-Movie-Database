@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useWatchlist } from '../context/WatchlistContext';
+import { parseReleaseYear } from '../utils/fetchMoviesByYear';
 import styles from './MovieDetails.module.css';
 
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
@@ -86,6 +87,8 @@ export default function MovieDetails() {
     (r) => r.Value !== 'N/A'
   );
 
+  const releaseYear = parseReleaseYear(movie.Year);
+
   return (
     <div className={styles.page}>
       {/* Blurred backdrop using poster */}
@@ -114,18 +117,30 @@ export default function MovieDetails() {
           <div className={styles.infoCol}>
             <div className={styles.badges}>
               {genres.map((g) => (
-                <span key={g} className={styles.badge}>
+                <Link
+                  key={g}
+                  to={`/?genre=${encodeURIComponent(g)}`}
+                  className={`${styles.badge} ${styles.badgeLink}`}
+                >
                   {g}
-                </span>
+                </Link>
               ))}
             </div>
 
             <h1 className={styles.title}>{movie.Title}</h1>
 
             <div className={styles.metaRow}>
-              {movie.Year !== 'N/A' && (
-                <span className={styles.metaItem}>{movie.Year}</span>
-              )}
+              {movie.Year !== 'N/A' &&
+                (releaseYear ? (
+                  <Link
+                    to={`/?year=${releaseYear}`}
+                    className={`${styles.metaItem} ${styles.metaItemLink}`}
+                  >
+                    {movie.Year}
+                  </Link>
+                ) : (
+                  <span className={styles.metaItem}>{movie.Year}</span>
+                ))}
               {movie.Runtime !== 'N/A' && (
                 <span className={styles.metaItem}>{movie.Runtime}</span>
               )}

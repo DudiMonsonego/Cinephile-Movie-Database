@@ -109,6 +109,21 @@
   color: var(--text-2);
 }
 
+.badgeLink,
+.metaItemLink {
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+
+.badgeLink:hover,
+.metaItemLink:hover {
+  background: rgba(124, 106, 255, 0.15);
+  border-color: rgba(124, 106, 255, 0.45);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
 /* Title */
 .title {
   font-size: clamp(1.8rem, 4vw, 2.8rem);

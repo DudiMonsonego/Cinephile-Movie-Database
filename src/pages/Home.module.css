@@ -66,19 +66,81 @@
   font-size: 1.05rem;
   color: var(--text-muted);
   margin: 0;
-  max-width: 440px;
+  max-width: 520px;
   line-height: 1.6;
 }
 
-/* ── Controls bar ────────────────────────── */
-.controls {
+/* ── Active browse banner ─────────────────── */
+.activeBrowse {
   max-width: 1340px;
-  margin: 0 auto;
-  padding: 0 1.5rem 1.25rem;
+  margin: 0 auto 1rem;
+  padding: 0 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.activeBrowseText {
+  font-size: 0.92rem;
+  color: var(--text-2);
+  margin: 0;
+}
+
+.activeBrowseText strong {
+  color: var(--text);
+}
+
+.clearBrowse,
+.clearBrowseBtn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-2);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.clearBrowse:hover,
+.clearBrowseBtn:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.clearBrowseBtn {
+  margin-top: 0.5rem;
+}
+
+.browseHint {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-top: 1.25rem;
+}
+
+/* ── Section bar (title + sort) ──────────── */
+.sectionBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text);
 }
 
 /* ── Grid section ────────────────────────── */
