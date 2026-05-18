@@ -1,0 +1,74 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 580px;
+}
+
+.icon {
+  position: absolute;
+  left: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.wrapper:focus-within .icon {
+  color: var(--accent);
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 3rem 1rem 3.1rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  color: var(--text);
+  font-size: 0.97rem;
+  font-family: inherit;
+  font-weight: 400;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-glow), 0 2px 16px rgba(0,0,0,0.2);
+  background: var(--surface-2);
+}
+
+.clear {
+  position: absolute;
+  right: 1rem;
+  background: var(--surface-3);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-muted);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.clear:hover {
+  color: var(--text);
+  background: var(--border-hover);
+  transform: scale(1.1);
+}

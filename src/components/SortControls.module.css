@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.count {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-right: auto;
+  font-weight: 500;
+}
+
+.label {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.select {
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 0.83rem;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 0.48rem 0.85rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  appearance: auto;
+}
+
+.select:focus,
+.select:hover {
+  border-color: var(--accent);
+  background: var(--surface-3);
+}
