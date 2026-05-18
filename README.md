@@ -1,8 +1,30 @@
 # Cinephile — Movie Database
 
+**[Live demo](https://cinephile-movie-database.vercel.app/)** · [GitHub](https://github.com/DudiMonsonego/Cinephile-Movie-Database)
+
 A responsive movie discovery web app where you can search the OMDb catalog, explore rich detail pages, and build a personal watchlist that persists in the browser.
 
 Built as a **portfolio project** to demonstrate modern React patterns, API integration, and polished UI without relying on a component library.
+
+---
+
+## Screenshots
+
+### Home
+
+![Cinephile home page — search hero](screenshots/home.png)
+
+### Search results
+
+![Search results grid with sort controls](screenshots/search-results.png)
+
+### Movie details
+
+![Inception movie detail page](screenshots/movie-details.png)
+
+### Watchlist
+
+![My Watchlist with saved movies](screenshots/watchlist.png)
 
 ---
 
@@ -38,6 +60,7 @@ Built as a **portfolio project** to demonstrate modern React patterns, API integ
 - CSS Modules (component-scoped styles)
 - Context API (`ThemeContext`, `WatchlistContext`)
 - [OMDb API](https://www.omdbapi.com/) for movie data
+- Deployed on [Vercel](https://vercel.com/)
 
 ---
 
@@ -57,7 +80,7 @@ cd Cinephile-Movie-Database
 
 ### 2. Configure environment variables
 
-Create a `.env` file in the project root:
+Copy `.env.example` to `.env` and add your key:
 
 ```env
 VITE_OMDB_API_KEY=your_api_key_here
@@ -105,27 +128,18 @@ src/
 │   └── Watchlist.jsx        # Saved movies
 ├── App.jsx                  # Router and providers
 └── index.css                # CSS variables and base styles
+screenshots/                 # README preview images
 ```
 
 ---
 
 ## Deployment
 
-This app is a static SPA after `npm run build`. Deploy the `dist/` folder to any static host, for example:
+The app is live at **[cinephile-movie-database.vercel.app](https://cinephile-movie-database.vercel.app/)**.
 
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-- [GitHub Pages](https://pages.github.com/)
+After `npm run build`, deploy the `dist/` folder to any static host (Vercel, Netlify, GitHub Pages, etc.). Set `VITE_OMDB_API_KEY` in your host’s environment variables before building.
 
-Set `VITE_OMDB_API_KEY` in your host’s environment variables before building.
-
----
-
-## Screenshots
-
-_Add screenshots or a short GIF here after deploying — recruiters love seeing the UI at a glance._
-
-Suggested captures: home search grid, movie detail page, watchlist, and dark mode.
+For client-side routing on Vercel, `vercel.json` rewrites all routes to `index.html` so deep links like `/movie/tt1375666` work correctly.
 
 ---
 
